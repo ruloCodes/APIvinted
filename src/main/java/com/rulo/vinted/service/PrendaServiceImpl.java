@@ -8,7 +8,6 @@ import com.rulo.vinted.repository.UsuarioRepository;
 import com.rulo.vinted.service.contract.PrendaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 import java.time.LocalDate;
 import java.util.Comparator;
@@ -132,6 +131,9 @@ public class PrendaServiceImpl implements PrendaService {
         return prendaRepository.save(prenda);
     }
 
+    /**
+     * Elimina una prenda identificada por su id.
+     * */
     @Override
     public void deletePrenda(long prendaId) {
         prendaRepository.findById(prendaId)
@@ -139,6 +141,9 @@ public class PrendaServiceImpl implements PrendaService {
         prendaRepository.deleteById(prendaId);
     }
 
+    /**
+     * Añade puntos a una prenda identificada por su id
+     * */
     @Override
     public Prenda addPtsPrenda(long prendaId, int pts) {
         Prenda prenda = prendaRepository.findById(prendaId)
