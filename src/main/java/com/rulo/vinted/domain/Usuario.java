@@ -1,5 +1,6 @@
 package com.rulo.vinted.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -53,6 +54,7 @@ public class Usuario {
     @Schema(description = "Fecha en la que se registra el usuario", example = "2021-04-01", required = true)
     @NotBlank
     @Column
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate fechaAlta;
 
 }
