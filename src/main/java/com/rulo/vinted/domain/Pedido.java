@@ -1,5 +1,6 @@
 package com.rulo.vinted.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -51,6 +52,7 @@ public class Pedido {
     @Schema(description = "Detalles del pedido", example = "1 Pantalón vaquero 12.75", required = true)
     @NotBlank
     @OneToMany(mappedBy = "pedido")
+    @JsonBackReference
     private List<Detalle> lineas;
 
 }
