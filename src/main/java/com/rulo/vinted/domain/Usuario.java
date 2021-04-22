@@ -57,4 +57,6 @@ public class Usuario {
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate fechaAlta;
 
+    private String token;
+
 }
